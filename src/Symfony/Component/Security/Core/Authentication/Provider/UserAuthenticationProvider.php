@@ -62,7 +62,7 @@ abstract class UserAuthenticationProvider implements AuthenticationProviderInter
         }
 
         $username = $token->getUsername();
-        if (empty($username)) {
+        if (empty($username) && !is_numeric($username)) {
             $username = 'NONE_PROVIDED';
         }
 
